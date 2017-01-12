@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p2R-Qh-8fw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="l7M-hH-TuQ"/>
+                                    <outletCollection property="gestureRecognizers" destination="7p6-7U-U6B" appends="YES" id="ufS-Bv-YPb"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA7-P6-Ek0">
+                                <rect key="frame" x="266" y="603" width="78" height="30"/>
+                                <state key="normal" title="Where I am"/>
+                                <connections>
+                                    <action selector="whereIam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSq-rG-mTP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31f-f5-XkF">
+                                <rect key="frame" x="23" y="603" width="125" height="30"/>
+                                <state key="normal" title="Delete All Markers"/>
+                                <connections>
+                                    <action selector="deleteAllMarkers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7gW-s8-huc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="p2R-Qh-8fw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CsD-56-aon"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p2R-Qh-8fw" secondAttribute="bottom" id="PJW-9f-4Kb"/>
+                            <constraint firstItem="fA7-P6-Ek0" firstAttribute="leading" secondItem="p2R-Qh-8fw" secondAttribute="trailing" constant="-109" id="VVx-Gc-BTe"/>
+                            <constraint firstItem="fA7-P6-Ek0" firstAttribute="top" secondItem="p2R-Qh-8fw" secondAttribute="bottom" constant="-64" id="elP-vt-Nl0"/>
+                            <constraint firstAttribute="trailing" secondItem="p2R-Qh-8fw" secondAttribute="trailing" id="izu-kQ-GS3"/>
+                            <constraint firstItem="p2R-Qh-8fw" firstAttribute="leading" secondItem="31f-f5-XkF" secondAttribute="trailing" constant="-148" id="pF7-gi-dnI"/>
+                            <constraint firstItem="p2R-Qh-8fw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vn0-np-F5Q"/>
+                            <constraint firstItem="31f-f5-XkF" firstAttribute="top" secondItem="p2R-Qh-8fw" secondAttribute="bottom" constant="-64" id="wFi-PC-7aC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="p2R-Qh-8fw" id="nRb-pK-RZ3"/>
+                        <outlet property="tapGesture" destination="7p6-7U-U6B" id="MAm-pl-cLI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7p6-7U-U6B">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="eyI-Ke-cBA"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="YJA-GZ-bNQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
