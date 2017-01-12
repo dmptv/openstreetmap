@@ -52,6 +52,7 @@
     [self.locationManager requestWhenInUseAuthorization];
 //    [self.locationManager startUpdatingLocation];
     
+    // kkkk
     self.mapView.showsScale = YES;
     self.mapView.showsUserLocation = YES;
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
